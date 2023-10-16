@@ -6,8 +6,10 @@ const mercadopago = require("mercadopago");
 app.use(express.json());
 app.use(cors());
 
+
+
 mercadopago.configure({
-  acces_token: "TEST-3019870087435922-101611-7d4968dcf338c1eec2640099276e0628-450677399",
+  acces_token: "",
 });
 
 app.get("/", function (req, res) {
