@@ -9,7 +9,7 @@ import './Product.css';
 const Product = () => {
     const [preferenceId, setPreferenceId] = useState(null);
 
-    initMercadoPago('YOUR_PUBLIC_KEY');
+    initMercadoPago('TEST-70793db1-7a2e-49ec-bf82-2d3559e763a7');
 
     const createPreference = async () => {
         try{
