@@ -2,14 +2,18 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const mercadopago = require("mercadopago");
+const dotenv = require('dotenv');
 
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.static("../../client/html-js"));
 app.use(cors());
-
-
+app.get("/", function (req, res) {
+	res.status(200).sendFile("index.html");
+});
 
 mercadopago.configure({
-  acces_token: "",
+  acces_token: process.env.ACCESS_TOKEN,
 });
 
 app.get("/", function (req, res) {
